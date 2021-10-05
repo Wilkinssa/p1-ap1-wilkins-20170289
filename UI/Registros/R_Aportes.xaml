@@ -1,0 +1,65 @@
+﻿<Window x:Class="p1_ap1_wilkins_20170289.UI.Registros.R_Aportes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:p1_ap1_wilkins_20170289.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registro de Aportes" Height="450" Width="500" WindowStartupLocation="CenterScreen" Icon="/Resources/Nuevo.png">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <!--AporteId-->
+            <Label Content="Aporte Id:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="AporteIdTextBox" Text="{Binding AporteId}" Width="100" HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
+
+                <!--Buscar-->
+                <Button x:Name="BuscarButton" Margin="10,0,0,0" Width="40" Click="BuscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="25" Source="/Resources/Buscar.png" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <!--Fecha-->
+            <Label Content="Fecha:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <DatePicker x:Name="FechaDatePicker" SelectedDate="{Binding Fecha}" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="150" Height="25"/>
+
+            <!--Persona-->
+            <Label Content="Persona:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <TextBox x:Name="PersonaTextBox" Text="{Binding Persona}" Height="25" VerticalContentAlignment="Center"/>
+
+            <!--Concepto-->
+            <Label Content="Concepto:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <TextBox x:Name="ConceptoTextBox" Text="{Binding Concepto}" Height="25" VerticalContentAlignment="Center"/>
+
+            <!--Monto-->
+            <Label Content="Monto:" FontWeight="Bold" Margin="0,10,0,0"/>
+            <TextBox x:Name="MontoTextBox" Text="{Binding Monto}" Height="25" VerticalContentAlignment="Center"/>
+
+            <!--Boton nuevo-->
+            <StackPanel Orientation="Horizontal" Margin="0,15,0,0" HorizontalAlignment="Center">
+                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
+                    <StackPanel Orientation="Vertical">
+                        <Image Height="25" Source="/Resources/Nuevo.png"/>
+                        <Label Content="Nuevo" FontSize="16" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--Boton guardar-->
+                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Vertical">
+                        <Image Height="30" Source="/Resources/Guardar.png"/>
+                        <Label Content="Guardar" FontSize="16" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+                <!--Boton eliminar-->
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Width="120" Margin="50,0,0,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="25" Source="/Resources/Eliminar.png"/>
+                        <Label Content="Eliminar" FontSize="16" FontWeight="Bold"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
